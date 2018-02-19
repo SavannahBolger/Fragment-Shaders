@@ -247,109 +247,109 @@ void Game::initialize()
 	vertex[9].color[1] = 1.0f;
 	vertex[9].color[2] = 0.0f;
 
-	vertex[10].color[0] = 1.1f;
-	vertex[10].color[1] = 1.0f;
-	vertex[10].color[2] = 0.0f;
+	vertex[10].color[0] = 1.0f;
+	vertex[10].color[1] = 0.0f;
+	vertex[10].color[2] = 0.1f;
 
-	vertex[11].color[0] = 1.2f;
-	vertex[11].color[1] = 1.0f;
-	vertex[11].color[2] = 0.0f;
+	vertex[11].color[0] = 1.0f;
+	vertex[11].color[1] = 0.0f;
+	vertex[11].color[2] = 0.2f;
 
-	vertex[12].color[0] = 1.3f;
-	vertex[12].color[1] = 1.0f;
-	vertex[12].color[2] = 0.0f;
+	vertex[12].color[0] = 1.0f;
+	vertex[12].color[1] = 0.0f;
+	vertex[12].color[2] = 0.3f;
 
-	vertex[13].color[0] = 1.4f;
-	vertex[13].color[1] = 1.0f;
-	vertex[13].color[2] = 0.0f;
+	vertex[13].color[0] = 1.0f;
+	vertex[13].color[1] = 0.0f;
+	vertex[13].color[2] = 0.4f;
 
-	vertex[14].color[0] = 1.5f;
-	vertex[14].color[1] = 1.0f;
-	vertex[14].color[2] = 0.0f;
+	vertex[14].color[0] = 1.0f;
+	vertex[14].color[1] = 0.0f;
+	vertex[14].color[2] = 0.5f;
 
-	vertex[15].color[0] = 1.6f;
-	vertex[15].color[1] = 1.0f;
-	vertex[15].color[2] = 0.0f;
+	vertex[15].color[0] = 1.0f;
+	vertex[15].color[1] = 0.0f;
+	vertex[15].color[2] = 0.6f;
 
-	vertex[16].color[0] = 1.7f;
-	vertex[16].color[1] = 1.0f;
-	vertex[16].color[2] = 0.0f;
+	vertex[16].color[0] = 1.0f;
+	vertex[16].color[1] = 0.0f;
+	vertex[16].color[2] = 0.7f;
 
-	vertex[17].color[0] = 1.8f;
-	vertex[17].color[1] = 1.0f;
-	vertex[17].color[2] = 0.0f;
+	vertex[17].color[0] = 1.0f;
+	vertex[17].color[1] = 0.0f;
+	vertex[17].color[2] = 0.8f;
 
-	vertex[18].color[0] = 1.9f;
-	vertex[18].color[1] = 1.0f;
-	vertex[18].color[2] = 0.0f;
+	vertex[18].color[0] = 1.0f;
+	vertex[18].color[1] = 0.0f;
+	vertex[18].color[2] = 0.9f;
 
-	vertex[19].color[0] = 2.0f;
-	vertex[19].color[1] = 1.0f;
-	vertex[19].color[2] = 0.0f;
+	vertex[19].color[0] = 1.0f;
+	vertex[19].color[1] = 0.0f;
+	vertex[19].color[2] = 1.0f;
 
-	vertex[20].color[0] = 2.1f;
+	vertex[20].color[0] = 0.0f;
 	vertex[20].color[1] = 1.0f;
-	vertex[20].color[2] = 0.0f;
+	vertex[20].color[2] = 0.1f;
 
-	vertex[21].color[0] = 2.2f;
+	vertex[21].color[0] = 0.0f;
 	vertex[21].color[1] = 1.0f;
-	vertex[21].color[2] = 0.0f;
+	vertex[21].color[2] = 0.2f;
 
-	vertex[22].color[0] = 2.3f;
+	vertex[22].color[0] = 0.0f;
 	vertex[22].color[1] = 1.0f;
-	vertex[22].color[2] = 0.0f;
+	vertex[22].color[2] = 0.3f;
 
-	vertex[23].color[0] = 2.4f;
+	vertex[23].color[0] = 0.0f;
 	vertex[23].color[1] = 1.0f;
-	vertex[23].color[2] = 0.0f;
+	vertex[23].color[2] = 0.4f;
 
-	vertex[24].color[0] = 2.5f;
+	vertex[24].color[0] = 0.0f;
 	vertex[24].color[1] = 1.0f;
-	vertex[24].color[2] = 0.0f;
+	vertex[24].color[2] = 0.5f;
 
-	vertex[25].color[0] = 2.6f;
+	vertex[25].color[0] = 0.0f;
 	vertex[25].color[1] = 1.0f;
-	vertex[25].color[2] = 0.0f;
+	vertex[25].color[2] = 0.6f;
 
-	vertex[26].color[0] = 2.7f;
+	vertex[26].color[0] = 0.0f;
 	vertex[26].color[1] = 1.0f;
-	vertex[26].color[2] = 0.0f;
+	vertex[26].color[2] = 0.7f;
 
-	vertex[27].color[0] = 2.8f;
+	vertex[27].color[0] = 0.0f;
 	vertex[27].color[1] = 1.0f;
-	vertex[27].color[2] = 0.0f;
+	vertex[27].color[2] = 0.8f;
 
-	vertex[28].color[0] = 2.9f;
+	vertex[28].color[0] = 0.0f;
 	vertex[28].color[1] = 1.0f;
-	vertex[28].color[2] = 0.0f;
+	vertex[28].color[2] = 0.9f;
 
-	vertex[29].color[0] = 3.0f;
+	vertex[29].color[0] = 0.0f;
 	vertex[29].color[1] = 1.0f;
-	vertex[29].color[2] = 0.0f;
+	vertex[29].color[2] = 1.0f;
 
-	vertex[30].color[0] = 3.1f;
-	vertex[30].color[1] = 1.0f;
-	vertex[30].color[2] = 0.0f;
+	vertex[30].color[0] = 0.0f;
+	vertex[30].color[1] = 0.1f;
+	vertex[30].color[2] = 1.0f;
 
-	vertex[31].color[0] = 3.2f;
-	vertex[31].color[1] = 1.0f;
-	vertex[31].color[2] = 0.0f;
+	vertex[31].color[0] = 0.0f;
+	vertex[31].color[1] = 0.2f;
+	vertex[31].color[2] = 1.0f;
 
-	vertex[32].color[0] = 3.3f;
-	vertex[32].color[1] = 1.0f;
-	vertex[32].color[2] = 0.0f;
+	vertex[32].color[0] = 0.0f;
+	vertex[32].color[1] = 0.3f;
+	vertex[32].color[2] = 1.0f;
 
-	vertex[33].color[0] = 3.4f;
-	vertex[33].color[1] = 1.0f;
-	vertex[33].color[2] = 0.0f;
+	vertex[33].color[0] = 0.0f;
+	vertex[33].color[1] = 0.4f;
+	vertex[33].color[2] = 1.0f;
 
-	vertex[34].color[0] = 3.5f;
-	vertex[34].color[1] = 1.0f;
-	vertex[34].color[2] = 0.0f;
+	vertex[34].color[0] = 0.0f;
+	vertex[34].color[1] = 3.5f;
+	vertex[34].color[2] = 1.0f;
 
-	vertex[35].color[0] = 3.6f;
-	vertex[35].color[1] = 1.0f;
-	vertex[35].color[2] = 0.0f;
+	vertex[35].color[0] = 0.0f;
+	vertex[35].color[1] = 0.6f;
+	vertex[35].color[2] = 1.0f;
 
 	/*Index of Poly / Triangle to Draw */
 	triangles[0] = 0;   triangles[1] = 1;   triangles[2] = 2;
@@ -371,13 +371,24 @@ void Game::initialize()
 	glBindBuffer(GL_ARRAY_BUFFER, vbo[0]);
 
 	/* Upload vertex data to GPU */
-	glBufferData(GL_ARRAY_BUFFER, sizeof(Vertex) * 7, vertex, GL_STATIC_DRAW);
+	glBufferData(GL_ARRAY_BUFFER, sizeof(Vertex) * 36, vertex, GL_STATIC_DRAW);
 	glBindBuffer(GL_ARRAY_BUFFER, 0);
 
 	glGenBuffers(1, &index);
 	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, index);
 	glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(GLubyte) * 36, triangles, GL_STATIC_DRAW);
 	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0);
+
+	for (int i = 0; i < 36; i++)
+	{
+		currentPosition[i] = Vector3D{ vertex[i].coordinate[0], vertex[i].coordinate[1], vertex[i].coordinate[2] };
+	}
+	for (int i = 0; i < 36; i++)
+	{
+		vertex[i].coordinate[0] = currentPosition[i].X();
+		vertex[i].coordinate[1] = currentPosition[i].Y();
+		vertex[i].coordinate[2] = currentPosition[i].Z();
+	}
 
 	/* Vertex Shader which would normally be loaded from an external file */
 	const char* vs_src = "#version 400\n\r"
@@ -486,7 +497,7 @@ void Game::update()
 	}
 
 	//Change vertex data
-	vertex[0].coordinate[0] += -0.0001f;
+	/*vertex[0].coordinate[0] += -0.0001f;
 	vertex[0].coordinate[1] += -0.0001f;
 	vertex[0].coordinate[2] += -0.0001f;
 
@@ -496,7 +507,7 @@ void Game::update()
 
 	vertex[2].coordinate[0] += -0.0001f;
 	vertex[2].coordinate[1] += -0.0001f;
-	vertex[2].coordinate[2] += -0.0001f;
+	vertex[2].coordinate[2] += -0.0001f;*/
 
 #if (DEBUG >= 2)
 	DEBUG_MSG("Update up...");
@@ -520,7 +531,7 @@ void Game::render()
 
 	/*	As the data positions will be updated by the this program on the
 		CPU bind the updated data to the GPU for drawing	*/
-	glBufferData(GL_ARRAY_BUFFER, sizeof(Vertex) * 3, vertex, GL_STATIC_DRAW);
+	glBufferData(GL_ARRAY_BUFFER, sizeof(Vertex) * 36, vertex, GL_STATIC_DRAW);
 
 	/*	Draw Triangle from VBO	(set where to start from as VBO can contain
 		model components that 'are' and 'are not' to be drawn )	*/
