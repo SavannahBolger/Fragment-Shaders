@@ -37,7 +37,7 @@ void Game::run()
 typedef struct
 {
 	float coordinate[3];
-	float color[4];
+	float color[3];
 } Vertex;
 
 Vertex vertex[36];
@@ -185,7 +185,7 @@ void Game::initialize()
 
 	vertex[30].coordinate[0] = -0.2f;
 	vertex[30].coordinate[1] = -0.2f;
-	vertex[30].coordinate[2] = 0.2f;
+	vertex[30].coordinate[2] = 0.5f;
 
 	vertex[31].coordinate[0] = -0.2f;
 	vertex[31].coordinate[1] = -0.2f;
@@ -508,6 +508,81 @@ void Game::update()
 	vertex[2].coordinate[0] += -0.0001f;
 	vertex[2].coordinate[1] += -0.0001f;
 	vertex[2].coordinate[2] += -0.0001f;*/
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::X))
+	{
+		xRotation = Matrix3::rotationX(0.00174533);//angle set to 2 degrees
+		for (size_t i = 0; i < 36; i++)
+		{
+			currentPosition[i] = (xRotation * currentPosition[i]);
+		}
+}
+
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Y))
+	{
+		yRotation = Matrix3::rotationY(0.00174533);//angle set to 2 degrees
+		for (size_t i = 0; i < 36; i++)
+		{
+			currentPosition[i] = yRotation * currentPosition[i];
+		}
+	}
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Z))
+	{
+		zRotation = Matrix3::rotationZ(0.00174533);//angle set to 2 degrees
+		for (size_t i = 0; i < 36; i++)
+		{
+			currentPosition[i] = zRotation * currentPosition[i];
+		}
+	}
+
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
+	{
+		for (size_t i = 0; i < 36; i++)
+		{
+			currentPosition[i] = (Matrix3::translation(activeTranslation) * currentPosition[i]) + Vector3D(0, 0.001, 0);
+		}
+	}
+	else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down))
+	{
+		for (size_t i = 0; i < 36; i++)
+		{
+			currentPosition[i] = (Matrix3::translation(activeTranslation) * currentPosition[i]) - Vector3D(0, 0.001, 0);
+		}
+	}
+	else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
+	{
+		for (size_t i = 0; i < 36; i++)
+		{
+			currentPosition[i] = (Matrix3::translation(activeTranslation) * currentPosition[i]) - Vector3D(0.001, 0, 0);
+		}
+	}
+	else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
+	{
+		for (size_t i = 0; i < 36; i++)
+		{
+			currentPosition[i] = (Matrix3::translation(activeTranslation) * currentPosition[i]) + Vector3D(0.001, 0, 0);
+		}
+	}
+	else if (sf::Keyboard::isKeyPressed(sf::Keyboard::S) && sf::Keyboard::isKeyPressed(sf::Keyboard::Add))
+	{
+		for (size_t i = 0; i < 36; i++)
+		{
+			currentPosition[i] = (Matrix3::scale(0.001) * currentPosition[i]) + currentPosition[i];
+		}
+	}
+	else if (sf::Keyboard::isKeyPressed(sf::Keyboard::S) && sf::Keyboard::isKeyPressed(sf::Keyboard::Subtract))
+	{
+		for (size_t i = 0; i < 36; i++)
+		{
+			currentPosition[i] = (Matrix3::scale(0.001) * currentPosition[i]) - currentPosition[i];
+		}
+	}
+
+	for (int i = 0; i < 36; i++)
+	{
+		vertex[i].coordinate[0] = currentPosition[i].X();
+		vertex[i].coordinate[1] = currentPosition[i].Y();
+		vertex[i].coordinate[2] = currentPosition[i].Z();
+	}
 
 #if (DEBUG >= 2)
 	DEBUG_MSG("Update up...");
@@ -539,7 +614,7 @@ void Game::render()
 	// Set pointers for each parameter
 	// https://www.opengl.org/sdk/docs/man4/html/glVertexAttribPointer.xhtml
 	glVertexAttribPointer(positionID, 3, GL_FLOAT, GL_FALSE, sizeof(Vertex), 0);
-	glVertexAttribPointer(colorID, 4, GL_FLOAT, GL_FALSE, sizeof(Vertex), 0);
+	glVertexAttribPointer(colorID, 3, GL_FLOAT, GL_FALSE, sizeof(Vertex), 0);
 
 	//Enable Arrays
 	glEnableVertexAttribArray(positionID);
