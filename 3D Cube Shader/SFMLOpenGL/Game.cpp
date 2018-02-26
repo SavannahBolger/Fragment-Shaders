@@ -61,6 +61,7 @@ void Game::initialize()
 	GLint isLinked = 0;
 
 	glewInit();
+	load();
 
 	/* Vertices counter-clockwise winding */
 	vertex[0].coordinate[0] = -0.2f;
@@ -207,7 +208,7 @@ void Game::initialize()
 	vertex[35].coordinate[1] = -0.2f;
 	vertex[35].coordinate[2] = 0.2f;
 
-	vertex[0].color[0] = 0.1f;
+	/*vertex[0].color[0] = 0.1f;
 	vertex[0].color[1] = 1.0f;
 	vertex[0].color[2] = 0.0f;
 
@@ -349,7 +350,7 @@ void Game::initialize()
 
 	vertex[35].color[0] = 0.0f;
 	vertex[35].color[1] = 0.6f;
-	vertex[35].color[2] = 1.0f;
+	vertex[35].color[2] = 1.0f;*/
 
 	/*Index of Poly / Triangle to Draw */
 	triangles[0] = 0;   triangles[1] = 1;   triangles[2] = 2;
@@ -389,16 +390,29 @@ void Game::initialize()
 		vertex[i].coordinate[1] = currentPosition[i].Y();
 		vertex[i].coordinate[2] = currentPosition[i].Z();
 	}
+	 
+	YAML::Node base = getNode();
+	const YAML::Node vertexShaderNode = base["vertexshader"].as<YAML::Node>();
+	const char* m_vertexShader1 = vertexShaderNode["line1"].as<char*>();
+	const char* m_vertexShader2 = vertexShaderNode["line2"].as<char*>();
+	const char* m_vertexShader3 = vertexShaderNode["line3"].as<char*>();
+	const char* m_vertexShader4 = vertexShaderNode["line4"].as<char*>();
+	const char* m_vertexShader5 = vertexShaderNode["line5"].as<char*>();
+	const char* m_vertexShader6 = vertexShaderNode["line6"].as<char*>();
+	const char* m_vertexShader7 = vertexShaderNode["line7"].as<char*>();
+	const char* m_vertexShader8 = vertexShaderNode["line8"].as<char*>();
+
 
 	/* Vertex Shader which would normally be loaded from an external file */
-	const char* vs_src = "#version 400\n\r"
+	const char* vs_src = m_vertexShader1;
+		/*"#version 400\n\r"
 		"in vec4 sv_position;"
 		"in vec4 sv_color;"
 		"out vec4 color;"
 		"void main() {"
 		"	color = sv_color;"
 		"	gl_Position = sv_position;"
-		"}"; //Vertex Shader Src
+		"}"; //Vertex Shader Src*/
 
 	DEBUG_MSG("Setting Up Vertex Shader");
 
@@ -495,6 +509,7 @@ void Game::update()
 			rotationAngle -= 360.0f;
 		}
 	}
+
 
 	//Change vertex data
 	/*vertex[0].coordinate[0] += -0.0001f;
@@ -634,4 +649,58 @@ void Game::unload()
 	glDeleteProgram(progID);
 	glDeleteBuffers(1, vbo);
 }
+
+bool Game::load()
+{
+
+	try
+	{
+		const YAML::Node baseNode = getNode();
+		if (baseNode.IsNull())
+		{
+			std::string message("file:  not found");
+			throw std::exception(message.c_str());
+		}
+		updateVertexShaders(baseNode);
+		updateFragmentShaders(baseNode);
+	}
+	catch (YAML::ParserException& e)
+	{
+		std::cout << e.what() << "\n";
+		return false;
+	}
+	catch (std::exception& e)
+	{
+		std::cout << e.what() << "\n";
+		return false;
+	}
+
+	return true;
+}
+
+const YAML::Node Game::getNode()
+{
+	std::string ss("ASSETS/QUIZZES/shader.yaml");
+	const YAML::Node base = YAML::LoadFile(ss.c_str());
+
+	return base;
+}
+
+const char Game::updateVertexShaders(const YAML::Node base) const
+{
+	
+}
+
+const char Game::updateFragmentShaders(const YAML::Node base) const
+{
+	const YAML::Node fragmentShaderNode = base["fragmentshader"].as<YAML::Node>();
+
+	const char m_fragmentShader1 = fragmentShaderNode["line1"].as<char>();
+	const char m_fragmentShader2 = fragmentShaderNode["line2"].as<char>();
+	const char m_fragmentShader3 = fragmentShaderNode["line3"].as<char>();
+	const char m_fragmentShader4 = fragmentShaderNode["line4"].as<char>();
+	const char m_fragmentShader5 = fragmentShaderNode["line5"].as<char>();
+	const char m_fragmentShader6 = fragmentShaderNode["line6"].as<char>();
+}
+
 

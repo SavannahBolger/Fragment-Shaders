@@ -1,0 +1,16 @@
+vertexshader: 
+   line1: "#version 400\n\r"
+   line2: "in vec4 sv_position;" 
+   line3: "in vec4 sv_color;" 
+   line4: "out vec4 color;"  
+   line5: "void main() {" 
+   line6: "	color = sv_color;"  
+   line7: "	gl_Position = sv_position;"
+   line8: "}"
+fragmentshader: 
+   line1: "#version 400\n\r"
+   line2: "in vec4 color;"
+   line3: "out vec4 fColor;" 
+   line4: "void main() {"  
+   line5: "	fColor = vec4(0.0f, 1.0f, 0.0f, 1.0f);" 
+   line6: "}"
